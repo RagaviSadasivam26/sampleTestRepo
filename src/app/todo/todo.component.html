@@ -1,0 +1,31 @@
+<div class="cardalign">
+  <div class="card shadow-lg mt-5">
+    <div class="card-header text-center">
+      <h1 class="display-6 fw-bold">Todo-List</h1>
+    </div>
+    <div class="card-body p-4">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Task To Do" #titleinput>
+        <button class="btn" (click)="onclick(titleinput)">
+          <i class="fa-solid fa-circle-plus fa-xl"></i>
+        </button>
+      </div>
+
+      <div class="card mt-2">
+        <ul class="list-group">
+          <li *ngFor="let item of task" class="list-group-item">
+            <span>
+              <i class="text-success" (click)="onselect(item.id, !item.isdone)">
+                <i [ngClass]="item.isdone ? 'fa-solid fa-circle-check' : 'fa-regular fa-circle'"></i>
+              </i>
+              {{ item.title }}
+              <span class="float-end text-secondary">
+                <i class="fa-solid fa-trash-can trash-icon" (click)="ondelete(item.id)"></i>
+              </span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
