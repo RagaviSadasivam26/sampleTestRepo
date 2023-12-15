@@ -26,12 +26,10 @@ export class TodoComponent implements OnInit {
       titleinput.value ="";
     }
   }
-
   onselect(id:string, status:boolean)
   {
     this.todoservice.updatetaskstatus(id,status);
   }
-
   ondelete(id:string)
   {
     this.todoservice.deletetaskstatus(id);

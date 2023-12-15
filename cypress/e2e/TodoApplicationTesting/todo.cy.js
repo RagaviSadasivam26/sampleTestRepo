@@ -16,22 +16,14 @@ describe('TodoApplication', ()=>{
     cy.get('.fa-solid.fa-circle-plus.fa-xl').should('be.visible').click();
     // to check the list is visible
     cy.get('.list-group-item').should('be.visible');
-    //click the button once its done
+    //to check the button
     cy.get('.list-group-item').eq(0).find('.text-success').click();
-
+    // to check the task once it completed
     cy.get('.list-group-item').eq(1).find('.text-success').click();
-
+    //to delete the task
     cy.get('.list-group-item').eq(2).find('.fa-trash-can').click();
-
+    // to update the task
     cy.get('.list-group-item').eq(1).find('.text-success').click();
-
-
-
-
-
-
-
-
 
   });
 })
